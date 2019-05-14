@@ -1,6 +1,9 @@
 <h1>My Tasks</h1>
 <% @tasks.each do |task| %>
-  <p><%= task.taskname %></p>
+<p><%= task.taskname %>
+<%= link_to "Mark as done", task_path(task),
+                            method: :delete %>
+</p>
 <% end %>
 
 <h1>Add A Task</h1>

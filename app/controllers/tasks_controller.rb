@@ -10,6 +10,12 @@ class TasksController < ApplicationController
     redirect_back fallback_location: root_path
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_back fallback_location: root_path
+  end
+
   private def task_params
     params.require(:task).permit(:taskname)
   end
